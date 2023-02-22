@@ -1,0 +1,258 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #de0a31;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    margin-top: -0.5%;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+}
+
+#logo-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#signup,
+#menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#signup>a,
+#menu>a {
+    text-decoration: none;
+    color: #de0a31;
+}
+
+#order-btn {
+    border: none;
+    background-color: #de0a31;
+    color: white;
+    height: 45px;
+    padding: 0.6rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#logo-name>img {
+    width: 13%;
+    cursor: pointer;
+}
+
+#menu {
+    width: 25%;
+    margin-right: 5%;
+}
+
+#signup {
+    width: 25%;
+    margin-right: 5%;
+}
+
+/* order top */
+#order-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    margin-top: 0.5%;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+#order-top-img {
+    margin-top: 4%;
+}
+
+#label>h1 {
+    font-size: 60px;
+    color: #de0a31;
+}
+
+#label>button {
+    border: none;
+    background-color: #de0a31;
+    color: white;
+    text-align: center;
+    padding: 1rem 3rem 1rem 3rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: larger;
+}
+
+/* 1st blocks */
+#fav {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 50px;
+}
+
+#flex-box-top>div>img {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#flex-box-top {
+    display: flex;
+    padding: 1rem;
+    /* background-color: aliceblue; */
+}
+
+#flex-box-top>div {
+    width: 50%;
+}
+
+#flex-box-top>div>p:nth-child(1) {
+    color: #de0a31;
+}
+
+#flex-box-top>div>p {
+    color: gray;
+}
+
+#flex-box-top>div>h1 {
+    color: #004f71;
+}
+
+/* hungry box */
+#hungry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 80%;
+    margin: auto;
+}
+
+#hungry>div:nth-child(1) {
+    width: 50%;
+}
+
+#programs {
+    color: #de0a31;
+}
+
+#hungry>div:nth-child(1)>h1 {
+    color: #004f71;
+}
+
+#hungry>div:nth-child(1)>h1+p {
+    color: gray;
+}
+
+#hungry>div:nth-child(2)>img {
+    width: 80%;
+    margin-left: 100px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* catering box */
+#catering {
+    width: 78%;
+    position: relative;
+    margin: 2% 0% 2% 10%;
+    border-radius: 20px;
+    z-index: -1;
+
+}
+
+#catering>div>img {
+    margin-left: 20.5%;
+    width: 78.5%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#catering-top-text {
+    position: absolute;
+    top: 25%;
+    left: 19%;
+    transform: translate(-50%, -50%);
+    color: #de0a31;
+    font-size: 44px;
+    text-align: center;
+}
+
+#catering-top-text-2 {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: #de0a31;
+    font-size: 44px;
+    text-align: center;
+}
+
+#catering-top-text-3 {
+    position: absolute;
+    top: 75%;
+    left: 19.3%;
+    transform: translate(-50%, -50%);
+    color: #de0a31;
+    font-size: 44px;
+    text-align: center;
+}
+
+/* rewards */
+.hungry>div:nth-child(1)>img {
+    width: 90%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.hungry>div:nth-child(2)>h1 {
+    color: #004f71;
+}
+
+.hungry>div:nth-child(2)>h1+p {
+    color: gray;
+}
+
+.hungry {
+    justify-content: space-between;
+    margin-right: 20%;
+}
+
+.hungry>div {
+    margin-right: 10%;
+}
+
+/* bottom part */
+#btm{
+    margin-top: 2%;
+}
+#btm-texts,
+#btm-text {
+    width: 45%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#btm-texts>a {
+    text-decoration: none;
+    color: #de0a31;
+}
+#btm-text{
+    margin-top: 0.5%;
+}
+#btm-text>a {
+    text-decoration: none;
+    color: gray;
+    font-size: 12px;
+}
