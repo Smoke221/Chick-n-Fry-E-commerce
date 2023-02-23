@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Chick-n-Fry</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav id="nav">
+        <img src="logo.png" alt="">
+    </nav>
+    <div id="main">
+        <h1>Sign in to <br> Chick-n-Fry®</h1>
+        <p>Receive points for qualifying purchases, redeem rewards and reach new tiers with increasing benefits. <br> Access your order history to make quick reorders and edits to open orders.</p>
+        <br>
+        <p>Don't have an account? <a href="signup.html">Sign up for Chick-n-Fry®</a></p>
+        <form id="myform">
+            <input type="email" id="email" autocomplete="username" name="email" placeholder=" Enter your email" required><br>
+            <input type="password" id="password" autocomplete="current-password" name="password" placeholder=" Enter your password" required><br>
+            <input onclick="onLogin()" type="submit" value="Sign in to Chick-n-Fry">
+        </form>
+    </div>
+</body>
+</html>
+<script src="login.js"></script>

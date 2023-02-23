@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <title>Meals | Chick-n-Fry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div id="logo-name">
+            <img src="logo.png" alt="">
+            <h3>Chick-n-Fry</h3>
+        </div>
+        <div id="menu">
+            <a href="breakfast.html">Menu</a>
+            <a href="">Stories</a>
+            <a href="">About</a>
+            <a href="">Careers</a>
+        </div>
+        <div id="signup">
+            <a href="cart.html" id="username"><ion-icon name="fast-food-outline"></ion-icon> Cart</a>
+            <button id="order-btn">Order food</button>
+        </div>
+    </nav> <br><br><br><br><br>
+    <div id="cart-main">
+        <h1>Your Meal</h1>
+        <div id="main">
+            <div id="container"></div>
+            <div id="checkout">
+                <div id="coupon"> <h2>Coupons</h2>
+                    <p>
+                        <input type="text" placeholder="Enter Coupon">
+                    <input type="submit" value="Apply Coupon">
+                    </p>
+                </div>
+                <div id="total">
+                    <p id="savings"></p>
+                    <p id="sub-total"> Sub-Total: <span id="price"></span></p>
+                    <p>Free shipping. Taxes not included</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="cart.js"></script>

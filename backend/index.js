@@ -9,9 +9,8 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
-app.use(express.static(__dirname + '/../frontend'));
 
-app.get("/home",(req,res) => {
+app.get("/",(req,res) => {
     try{
         res.send(res)
     }
@@ -19,6 +18,8 @@ app.get("/home",(req,res) => {
         res.send({"msg":"Something went wrong"})
     }
 })
+
+
 
 app.use("/user",userRouter)
 
