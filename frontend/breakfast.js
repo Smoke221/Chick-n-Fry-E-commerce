@@ -1,3 +1,8 @@
+document.getElementById("nav").addEventListener("click", () => {
+    window.location.href = "index.html"
+})
+
+
 let bag = []
 let container = document.querySelector("#container")
 
@@ -12,6 +17,7 @@ function displayCard(data){
     container.innerHTML = null;
     data.forEach(e => {
         let divs = document.createElement("div")
+        
         let image = document.createElement("img")
         image.setAttribute("src",e.main_image)
 
@@ -24,6 +30,7 @@ function displayCard(data){
 
         let addToCart = document.createElement("button")
         addToCart.textContent = "Add to Meal"
+        // addToCart.setAttribute("onclick","toCart()")
         addToCart.addEventListener("click", () => {
             addToCart.textContent = "In your meal"
             let added = JSON.parse(localStorage.getItem("in-cart")) || []

@@ -1,0 +1,152 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #de0a31;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    margin-top: -0.5%;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+}
+
+#logo-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#signup,
+#menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#signup>a,
+#menu>a {
+    text-decoration: none;
+    color: #de0a31;
+}
+
+#order-btn {
+    border: none;
+    background-color: #de0a31;
+    color: white;
+    height: 45px;
+    padding: 0.6rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#logo-name>img {
+    width: 13%;
+    cursor: pointer;
+    margin-bottom: 2%
+}
+
+#menu {
+    width: 25%;
+    margin-right: 5%;
+}
+
+#signup {
+    width: 25%;
+    margin-right: 5%;
+}
+ion-icon {
+    margin: auto;
+    font-size: 27px;
+    color: #db2b4b;
+  }
+
+#username{
+    display: flex;
+    align-items: last baseline;
+    gap: 0.2rem;
+}
+#signup>a{
+    font-size: medium;
+}
+
+/* container */
+#cart-main{
+    text-align: center;
+}
+#cart-main>h1{
+    color: #004f71;
+}
+#main{
+    width: 50%;
+    margin-right: auto;
+    margin-left: 5%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+#each>img{
+    width: 15%;
+}
+#each{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7rem;
+}
+#each>div{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+#each>div>h3{
+    color: #004f71;
+}
+#nutrients{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: start;
+    gap: 1rem;
+    font-size: 12px;
+    color: gray;
+}
+#each>div>h3+p{
+    color: rgb(48, 187, 5);
+    font-size: 12px;
+}
+#checkout{
+    border: 1px solid red;
+    margin-left: 20%;
+    width: auto;
+    padding: 0rem 5rem 3rem 1rem;
+    text-align: start;
+}
+#sub-total+p{
+    font-size: small;
+    color: #de0a31;
+}
+#coupon>h2{
+    color: #004f71;
+}
+#coupon>p{
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+}
+#coupon>p>input{
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 150px;
+    height: 4vh;
+}
+#coupon>p input[type="submit"]{
+    background-color: #de0a31;
+    color: white;
+    border: none;
+}
