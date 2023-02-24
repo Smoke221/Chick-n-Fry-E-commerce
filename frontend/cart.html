@@ -41,11 +41,25 @@
                 </div>
                 <div id="total">
                     <p id="savings"></p>
-                    <p id="sub-total"> Sub-Total: <span id="price"></span></p>
+                    <div id="sub-total"> <p>Sub-Total:</p> <p id="price"></p></div>
                     <p>Free shipping. Taxes not included</p>
+                    <br>
+                    <input onclick="payment()" type="submit" value="Checkout">
                 </div>
             </div>
         </div>
+    </div>
+    <div id="payment" style="display: none;">
+        <div id="qty"><p>No.of items that will be delivered</p><p id="qunatity">0</p></div>
+        <div id="payable"><p>Amount Payable</p><p id="amt-payable"></p></div>
+        <div id="method">
+            <p><input type="radio"> Cash On Delivery</p>
+            <p><input type="radio"> Credit Cards</p>
+            <p><input type="radio"> Debit Cards</p>
+            <p><input type="radio"> Wallets</p>
+            <p><input type="radio"> Gift Cards</p>
+        </div> <br>
+        <button id="pay">Proceed</button>
     </div>
 </body>
 

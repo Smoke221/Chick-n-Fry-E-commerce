@@ -1,6 +1,5 @@
 let getData = JSON.parse(localStorage.getItem("in-cart")) || []
 let container = document.querySelector('#container')
-let total = 0;
 
 function displayCard(data) {
     container.innerHTML = null;
@@ -44,14 +43,16 @@ function displayCard(data) {
         option5.setAttribute("value", "5")
         option5.textContent = 5
 
-        
-            // Find the product in the cartProducts array
+
+        // Find the product in the cartProducts array
         let cartProduct = getData.find(p => p.id === e.id);
         if (cartProduct) {
             // If the product is in the cart, set the quantity value to its value in the cart
             select.value = cartProduct.quantity;
             quantity.textContent = "Quantity: " + cartProduct.quantity;
             price.textContent = cartProduct.quantity * e.price + "$";
+
+
         } else {
             // Otherwise, set the quantity value to 1
             select.value = 1;
@@ -74,6 +75,10 @@ function displayCard(data) {
 
             quantity.textContent = "Quantity: " + selectedValue;
             price.textContent = selectedValue * e.price + "$";
+
+            total = calculateTotal(getData)
+            localStorage.setItem("sub-total", total)
+            document.getElementById("price").innerText = localStorage.getItem("sub-total")
         });
 
 
@@ -96,3 +101,46 @@ function displayCard(data) {
     })
 }
 displayCard(getData)
+
+
+function calculateTotal(data) {
+    let total = 0
+    data.forEach(item => {
+        total += (item.price * item.quantity)
+        localStorage.setItem("sub-total", total)
+    })
+    return total
+}
+document.getElementById("price").innerText = localStorage.getItem("sub-total")
+
+
+function calculateQty(data){
+    let qty = 0
+    data.forEach(item => {
+        qty += parseInt(item.quantity)
+        localStorage.setItem("total-quantity",qty)
+    })
+    return qty
+}
+
+let paymentCard = document.querySelector("#payment")
+const payment = () => {
+    if (paymentCard.style.display === "none") {
+        paymentCard.style.display = "block";
+        document.querySelector("#cart-main").style.opacity = "20%"
+        document.getElementById("amt-payable").innerText = "$" + " " + localStorage.getItem("sub-total")
+        // document.getElementById("quantity").textContent = qty
+    } else {
+        paymentCard.style.display = "none";
+    }
+}
+
+let qty =  calculateQty(getData)
+// document.getElementById("quantity").textContent = qty
+
+let payBtn = document.querySelector("#pay").addEventListener("click", () => {
+    localStorage.clear()
+    paymentCard.style.display === "none"
+    alert("Order Successful")
+    
+})

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Chick-n-Fry</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="nav">
+        <img src="logo.png" alt="">
+        <h1>Chick-n-Fry®<br>
+            <p>Admin Dashboard</p>
+        </h1>
+    </nav>
+    <div id="menuu">
+        <div class="menu">
+            <p id="dash">Dashboard</p>
+            <p id="add">Add a product</p>
+            <p id="update">Update a product</p>
+            <p id="dlt">Delete a product</p>
+        </div>
+    </div>
+    <div  id="dashboard">
+        <div id="info-products">
+            <p>Total active products -</p>
+            <p id="total"></p>
+        </div>
+        <div id="container"></div>
+    </div>
+    <div style="display: none;" id="addProduct">
+        <form>
+            <input type="text" id="id" placeholder="id"> <br> <br>
+            <input type="text" id="main_image" placeholder="Image link"> <br> <br>
+            <input type="text" id="title" placeholder="Title"> <br> <br>
+            <input type="text" id="price" placeholder="price"> <br> <br>
+            <input type="text" id="calories" placeholder="cal"> <br> <br>
+            <input type="text" id="carbs" placeholder="carbs"> <br> <br>
+            <input type="text" id="fat" placeholder="fat"> <br> <br>
+            <input type="text" id="protein" placeholder="protein"> <br> <br>
+            <input onclick="addProd()" type="submit" value="Add to Database">
+        </form>
+    </div>
+    <div style="display: none;" id="updateProduct"></div>
+    <div style="display: none;" id="deleteProduct"></div>
+</body>
+
+</html>
+<script src="admin.js"></script>
