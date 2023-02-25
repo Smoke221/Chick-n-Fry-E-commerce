@@ -1,31 +1,29 @@
-document.getElementById("nav").addEventListener("click", () => {
-    window.location.href = "index.html"
-})
-
 const form = document.querySelector('#myform');
+let logout = document.querySelector("#admin-menu")
 
 form.addEventListener('click', function (event) {
     if (event.target.type === 'submit') {
         event.preventDefault()
         const onLogin = () => {
             const payload = {
+                // name : document.querySelector('#name').value,
                 email: document.querySelector('#email').value,
                 password: document.querySelector('#password').value
             }
-            fetch("http://localhost:1010/user/login", {
+            fetch("http://localhost:1010/admin/login", {
                 method: "POST",
                 headers: {
-                    "Content-type": "application/json"
+                    "Content-type": "application/json",
                 },
                 body: JSON.stringify(payload)
             })
                 .then(res => res.json())
                 .then(res => {
                     if (res.token) {
-                        // console.log(res.name);
-                        localStorage.setItem('userName',res.name)
+                        // document.querySelector("#admin_name").textContent = res.name
+                        localStorage.setItem('name',res.name)
                         localStorage.setItem('token', res.token);
-                        window.location.href = "index.html";
+                        window.location.href = "http://127.0.0.1:5500/tangible-voyage-4988/frontend/admin.html"
                     } else {
                         console.log("Error: Response does not include token");
                     }
@@ -36,3 +34,4 @@ form.addEventListener('click', function (event) {
     }
 });
 
+document.querySelector("#login").textContent = localStorage.getItem("name")

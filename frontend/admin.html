@@ -16,6 +16,7 @@
         <h1>Chick-n-Fry®<br>
             <p>Admin Dashboard</p>
         </h1>
+        <a id="login" href="adminLogin.html">Admin</a>
     </nav>
     <div id="menuu">
         <div class="menu">
@@ -25,7 +26,7 @@
             <p id="dlt">Delete a product</p>
         </div>
     </div>
-    <div  id="dashboard">
+    <div style="display: block;" id="dashboard">
         <div id="info-products">
             <p>Total active products -</p>
             <p id="total"></p>
@@ -33,20 +34,48 @@
         <div id="container"></div>
     </div>
     <div style="display: none;" id="addProduct">
+        <h1>Add a new product </h1>
         <form>
-            <input type="text" id="id" placeholder="id"> <br> <br>
+            <input type="text" id="id" placeholder="Common id"> <br> <br>
             <input type="text" id="main_image" placeholder="Image link"> <br> <br>
             <input type="text" id="title" placeholder="Title"> <br> <br>
-            <input type="text" id="price" placeholder="price"> <br> <br>
-            <input type="text" id="calories" placeholder="cal"> <br> <br>
-            <input type="text" id="carbs" placeholder="carbs"> <br> <br>
-            <input type="text" id="fat" placeholder="fat"> <br> <br>
-            <input type="text" id="protein" placeholder="protein"> <br> <br>
+            <input type="text" id="price" placeholder="Price"> <br> <br>
+            <input type="text" id="calories" placeholder="Calories"> <br> <br>
+            <input type="text" id="carbs" placeholder="Carbs"> <br> <br>
+            <input type="text" id="fat" placeholder="Fat"> <br> <br>
+            <input type="text" id="protein" placeholder="Protein"> <br> <br>
             <input onclick="addProd()" type="submit" value="Add to Database">
         </form>
     </div>
-    <div style="display: none;" id="updateProduct"></div>
-    <div style="display: none;" id="deleteProduct"></div>
+    <div style="display: none;" id="updateProduct" class="updateProduct">
+        <div>
+            <h1>Update Image and Price</h1>
+            <h1>Update the entire product</h1>
+        </div>
+        <form>
+            <input type="text" class="upId" placeholder="Product id"> <br> <br>
+            <input type="text" class="upImage" placeholder="Image link"> <br> <br>
+            <input type="text" class="upPrice" placeholder="Price"> <br> <br>
+            <input onclick="updateProd()" type="submit" value="Click to update">
+        </form>
+        <form>
+            <input type="text" id="allId" placeholder="Product id"> <br> <br>
+            <input type="text" id="allImage" placeholder="Image link"> <br> <br>
+            <input type="text" id="allTitle" placeholder="Title"> <br> <br>
+            <input type="text" id="allPrice" placeholder="Price"> <br> <br>
+            <input type="text" id="allCalories" placeholder="Calories"> <br> <br>
+            <input type="text" id="allCarbs" placeholder="Carbs"> <br> <br>
+            <input type="text" id="allFat" placeholder="Fat"> <br> <br>
+            <input type="text" id="allProtein" placeholder="Protein"> <br> <br>
+            <input onclick="updateAllProd()" type="submit" value="Click to update">
+        </form>
+    </div>
+    <div style="display: none;" id="deleteProduct">
+        <form>
+            <input type="text" id="id" class="id" placeholder="Product id"> <br> <br>
+            <input onclick="deleteProd()" type="submit" value="Delete">
+        </form>
+    </div>
 </body>
 
 </html>

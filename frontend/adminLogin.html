@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Chick-n-Fry</title>
+    <link rel="stylesheet" href="adminLogin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav id="nav">
+        <img src="logo.png" alt="">
+        <h1>Chick-n-Fry®<br>
+            <p>Admin Dashboard</p>
+        </h1>
+        <a id="login" href="adminLogin.html">Admin</a>
+        <button id="admin-menu" style="display: none;">Logout</button>
+    </nav>
+    <div id="main">
+        <div id="login">
+            <form id="myform">
+                <!-- <input type="name" id="name" autocomplete="username" name="name" placeholder=" Enter your name" required><br> -->
+                <input type="email" id="email" autocomplete="username" name="email" placeholder=" Enter your email" required><br>
+                <input type="password" id="password" autocomplete="current-password" name="password" placeholder=" Enter your password" required><br>
+                <input onclick="onLogin()" type="submit" value="Sign in to Chick-n-Fry">
+            </form>
+        </div>
+    </div>
+</body>
+<script src="adminLogin.js"></script>

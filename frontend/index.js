@@ -9,3 +9,4 @@
 //       document.querySelector('#username').textContent = data.firstname;
 //     })
 //     .catch(error => console.error(error));
+document.querySelector("#username").textContent = "Welcome," + " " + localStorage.getItem("userName")

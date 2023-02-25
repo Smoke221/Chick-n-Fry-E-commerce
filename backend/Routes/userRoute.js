@@ -45,10 +45,10 @@ userRouter.post('/login', async (req, res) => {
     try {
         const user = await userModel.find({ email })
         if (user.length > 0) {
+            let firstname = user[0].firstname
             bcrypt.compare(password, user[0].password, (err, hash) => {
                 if (hash) {
                     let token = jwt.sign({ userID: user[0]._id}, 'chick-n-fry')
-                    let firstname = user[0].firstname
                     res.send({ 'msg': 'logged in', "token": token, "name":firstname})
                 } else {
                     res.send({ 'msg': 'Wrong Password' })

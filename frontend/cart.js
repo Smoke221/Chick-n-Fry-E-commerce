@@ -1,5 +1,6 @@
 let getData = JSON.parse(localStorage.getItem("in-cart")) || []
 let container = document.querySelector('#container')
+document.querySelector("#username").textContent = "Welcome," + " " + localStorage.getItem("userName")
 
 function displayCard(data) {
     container.innerHTML = null;

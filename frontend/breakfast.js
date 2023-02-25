@@ -2,6 +2,7 @@ document.getElementById("nav").addEventListener("click", () => {
     window.location.href = "index.html"
 })
 
+document.querySelector("#username").textContent = "Welcome," + " " + localStorage.getItem("userName")
 
 let bag = []
 let container = document.querySelector("#container")
