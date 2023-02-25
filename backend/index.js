@@ -4,8 +4,9 @@ const connection = require("./configs/db")
 const {userRouter} = require("./Routes/userRoute")
 const cors = require("cors")
 require('dotenv').config()
-const MongoClient = require('mongodb').MongoClient;
-const {adminRouter} = require("./Routes/adminAddProduct")
+const {adminRouter} = require("./Routes/adminRoute")
+const {authenticate} = require("./middlewares/authenticate")
+
 
 const app = express()
 
@@ -21,27 +22,10 @@ app.get("/",(req,res) => {
     }
 })
 
-
 app.use("/user",userRouter)
+// app.use(authenticate)
 app.use("/admin",adminRouter)
 
-const url = process.env.mongoURL;
-const client = new MongoClient(url, { useNewUrlParser: true });
-
-app.get("/dashboard",(req,res) => {
-    client.connect((err) => {
-        const collection = client.db("chick-n-fry").collection("breakfasts")
-        collection.find({}).toArray((err,prods) => {
-            if(err){
-                console.log(err);
-                res.send({"msg":"error retrieving data from nongodb"})
-            }else{
-                res.json(prods)
-            }
-            client.close()
-        })
-    })
-})
 
 app.listen(process.env.port,async() => {
     try{

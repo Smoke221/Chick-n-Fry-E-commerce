@@ -1,4 +1,8 @@
 let container = document.getElementById("container")
+let token = localStorage.getItem("token")
+
+
+document.querySelector("#login").textContent = "Hello," + " " + localStorage.getItem("name")
 
 const xhr = new XMLHttpRequest()
 xhr.onreadystatechange = function () {
@@ -16,16 +20,24 @@ xhr.onreadystatechange = function () {
             let name = document.createElement("h4")
             name.textContent = e.title
             let calories = document.createElement("p")
-            calories.textContent = e.calories + "cal " + " " + "per meal"
+            calories.textContent = e.calories + " " + "cal "
             let price = document.createElement('p')
             price.textContent = e.price + "$"
 
-            divs.append(image, name, calories, price)
+            let id = document.createElement("p")
+            id.textContent = e._id
+            // let deleteButton = document.createElement("button")
+            // deleteButton.setAttribute("id","deleteBtn")
+            // deleteButton.setAttribute("style","display: none;")
+            // deleteButton.textContent = "Delete"
+
+            divs.append(image, name, id, calories, price,)
             container.append(divs)
         })
     }
 }
-xhr.open("GET", 'http://localhost:1010/dashboard')
+xhr.open("GET", 'http://localhost:1010/admin/dashboard')
+xhr.setRequestHeader("Authorization", `${token}`);
 xhr.send()
 
 let dash = document.querySelector("#dash")
@@ -38,6 +50,19 @@ let addD = document.querySelector("#addProduct")
 let updateD = document.querySelector("#updateProduct")
 let dltD = document.querySelector("#deleteProduct")
 
+// let dltBtn = document.querySelector("#deleteBtn")
+
+dash.addEventListener("click", () => {
+    if (dashD.style.display === "none") {
+        addD.style.display = "none"
+        dashD.style.display = "block"
+        updateD.style.display = "none"
+        dltD.style.display = "none"
+    } else {
+        dashD.style.display === "none"
+    }
+})
+
 add.addEventListener("click", () => {
     // console.log("ok");
     if (addD.style.display === "none") {
@@ -46,30 +71,39 @@ add.addEventListener("click", () => {
         updateD.style.display = "none"
         dltD.style.display = "none"
     } else {
-        addD.style.display = "none"
+        addD.style.display === "none"
     }
 })
 update.addEventListener("click", () => {
+    // console.log("w");
     if (updateD.style.display === "none") {
         updateD.style.display = "block"
         addD.style.display = "none"
-        updateD.style.display = "none"
+        dashD.style.display = "none"
         dltD.style.display = "none"
     } else {
-        updateD.style.display = "none"
+        updateD.style.display === "none"
     }
 })
 dlt.addEventListener("click", () => {
+    // console.log("wo");
     if (dltD.style.display === "none") {
         dltD.style.display = "block"
         dashD.style.display = "none"
         updateD.style.display = "none"
         addD.style.display = "none"
     } else {
-        dltD.style.display = "none"
+        dltD.style.display === "none"
     }
 })
-
+let id = document.getElementById("id").value
+let main_image = document.getElementById("main_image").value
+let title = document.getElementById("title").value
+let price = document.getElementById("price").value
+let calories = document.getElementById("calories").value
+let carbs = document.getElementById("carbs").value
+let fat = document.getElementById("fat").value
+let protein = document.getElementById("protein").value
 
 
 
@@ -90,11 +124,82 @@ const addProd = () => {
     fetch("http://localhost:1010/admin/add", {
         method: "POST",
         headers: {
-            "Content-type": "application/json"
+            "Content-type": "application/json",
+            "Authorization": `${token}`
         },
         body: JSON.stringify(payload)
     })
-    .then(res => res.json())
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
 }
+
+// update product
+const updateProd = () => {
+    const payload = {
+        main_image: document.querySelector(".upImage").value,
+        price: document.querySelector(".upPrice").value,
+    }
+    const inputID = document.querySelector(".upId").value
+    fetch(`http://localhost:1010/admin/update/${inputID}`, {
+        method: "PATCH",
+        headers: {
+            "Content-type": "application/json",
+            "Authorization":`${token}`
+        },
+        body: JSON.stringify(payload)
+    })
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+
+}
+
+const updateAllProd = () => {
+    const inputID = document.querySelector("#allId").value
+    const payload = {
+        main_image: document.getElementById("allImage").value,
+        title: document.getElementById("allTitle").value,
+        price: document.getElementById("allPrice").value,
+        calories: document.getElementById("allCalories").value,
+        carbs: document.getElementById("allCarbs").value,
+        fat: document.getElementById("allFat").value,
+        protein: document.getElementById("allProtein").value
+    }
+    fetch(`http://localhost:1010/admin/update/${inputID}`, {
+        method: "PATCH",
+        headers: {
+            "Content-type": "application/json",
+            "Authorization":`${token}`
+        },
+        body: JSON.stringify(payload)
+    })
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+}
+
+// delete product
+const deleteProd = () => {
+    const inputID = document.querySelector(".id")
+
+    // console.log(inputID);
+    fetch(`http://localhost:1010/admin/delete/${inputID.value}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `${token}`
+        }
+    })
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+};
+
+// window.addEventListener("scroll", function() {
+//     var navbar2 = document.querySelector("#menuu");
+//     if (window.pageYOffset >= 50) {
+//       navbar2.style.display = "block";
+//     } else {
+//       navbar2.style.display = "none";
+//     }
+//   });
