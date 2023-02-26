@@ -16,13 +16,13 @@ nav>img {
     cursor: pointer;
     margin-bottom: 2%
 }
+
 #main {
     text-align: center;
 }
 
 #main>h1 {
     color: #004f71;
-    font-size: 3rem;
 }
 
 #main>p {
@@ -61,4 +61,34 @@ input[type="submit"]:hover {
 a{
     text-decoration: none;
     color: #de0a31;
+}
+
+/* btm */
+
+#btm-top{
+    margin-top: 3%;
+}
+
+#btm{
+    margin-top: 2%;
+}
+#btm-texts,
+#btm-text {
+    width: 45%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#btm-texts>a {
+    text-decoration: none;
+    color: #de0a31;
+}
+#btm-text{
+    margin-top: 0.5%;
+}
+#btm-text>a {
+    text-decoration: none;
+    color: gray;
+    font-size: 12px;
 }

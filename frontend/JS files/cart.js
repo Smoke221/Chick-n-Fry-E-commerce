@@ -1,14 +1,16 @@
 let getData = JSON.parse(localStorage.getItem("in-cart")) || []
 let container = document.querySelector('#container')
+// let quantityCart = localStorage.getItem("total-quantity")
+// let subTotal = localStorage.getItem("sub-total")
 
 window.onload = calculateQty(getData)
-window.addEventListener("load",() => {
+window.addEventListener("load", () => {
     calculateTotal(getData)
     document.getElementById("price").innerText = localStorage.getItem("sub-total")
     document.getElementById("nav-qty").innerText = localStorage.getItem("total-quantity") || 0
 })
 
-document.querySelector("#username").textContent = "Welcome," + " " + localStorage.getItem("userName")
+document.querySelector("#username").textContent = "Welcome," + " " + (localStorage.getItem("userName") || "Stranger")
 
 document.querySelector("#order-btn").addEventListener("click", () => {
     window.location.assign("breakfast.html")
@@ -95,8 +97,28 @@ function displayCard(data) {
             total = calculateTotal(getData)
             localStorage.setItem("sub-total", total)
             document.getElementById("price").innerText = localStorage.getItem("sub-total")
+
+
         });
 
+        let deleteBtn = document.createElement("button")
+        deleteBtn.textContent = "Remove"
+        deleteBtn.setAttribute("id","order-btn")
+         
+        let quantityCart = calculateQty(getData)
+        let subTotal = calculateTotal(getData)
+
+        deleteBtn.addEventListener("click", () => {
+            quantityCart--
+            localStorage.setItem("total-quantity", quantityCart)
+            getData.splice(index, 1)
+            subTotal -= e.price * e.quantity
+            localStorage.setItem("sub-total", subTotal)
+            document.getElementById("nav-qty").innerText = localStorage.getItem("total-quantity")
+            document.getElementById("price").innerText = localStorage.getItem("sub-total")
+            localStorage.setItem("in-cart", JSON.stringify(getData))
+            displayCard(getData)
+        })
 
         let nutrients = document.createElement("p")
         nutrients.setAttribute("id", "nutrients")
@@ -112,7 +134,7 @@ function displayCard(data) {
         nutrients.append(cal, fat, carbs, protein)
         div.append(name, quantity, nutrients)
         select.append(option, option1, option2, option3, option4, option5)
-        divs.append(image, div, select, price)
+        divs.append(image, div, select, price, deleteBtn)
         container.append(divs)
     })
 }
@@ -130,11 +152,11 @@ function calculateTotal(data) {
 document.getElementById("price").innerText = localStorage.getItem("sub-total")
 
 
-function calculateQty(data){
+function calculateQty(data) {
     let qty = 0
     data.forEach(item => {
         qty += parseInt(item.quantity)
-        localStorage.setItem("total-quantity",qty)
+        localStorage.setItem("total-quantity", qty)
     })
     return qty
 }
@@ -152,7 +174,7 @@ const payment = () => {
     }
 }
 
-let qty =  calculateQty(getData)
+let qty = calculateQty(getData)
 // document.getElementById("quantity").textContent = qty
 let messageCard = document.querySelector("#message-card");
 
@@ -165,5 +187,18 @@ let payBtn = document.querySelector("#pay").addEventListener("click", () => {
     setTimeout(() => {
         window.location.href = "index.html";
     }, 2000);
-    
+
 })
+
+let main = document.getElementById("cart-main")
+let nologin = document.getElementById("noLogin")
+window.onload = () => {
+    if (localStorage.getItem("userName") !== null) {
+        main.style.display = "block"
+        nologin.style.display = "none"
+        // userName.textContent = localStorage.getItem("userName")
+    } else {
+        main.style.display = "none"
+        nologin.style.display = "block"
+    }
+};
