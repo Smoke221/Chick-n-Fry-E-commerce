@@ -88,10 +88,10 @@ adminRouter.get("/dashboard", authenticate, async (req, res) => {
 // }
 
 adminRouter.post("/add", authenticate, async (req, res) => {
-    const { id, main_image, title, price, calories, carbs, fat, protein } = req.body
-    const newProduct = new AddModel({ id, main_image, title, price, calories, carbs, fat, protein })
+    const { id, main_image, title, price, calories, carbs, fat, protein, userID } = req.body
+    const newProduct = new AddModel({ id, main_image, title, price, calories, carbs, fat, protein, userID })
     await newProduct.save()
-    res.send({ "msg": "new user added" })
+    res.send({ "msg": "new product added" })
 })
 
 adminRouter.patch("/update/:id", authenticate, async (req, res) => {

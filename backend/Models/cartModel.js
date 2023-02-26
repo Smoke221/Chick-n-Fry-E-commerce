@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const AddSchema = mongoose.Schema({
+const cartSchema = mongoose.Schema({
     id:String,
     main_image:String,
     title:String,
@@ -12,8 +12,8 @@ const AddSchema = mongoose.Schema({
     userID:String
 })
 
-const AddModel = mongoose.model("breakfast",AddSchema)
+const cartModel = mongoose.model("breakfast",cartSchema)
 
 module.exports = {
-    AddModel
+    cartModel
 }

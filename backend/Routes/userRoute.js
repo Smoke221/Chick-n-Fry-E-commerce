@@ -2,6 +2,7 @@ const express = require("express")
 const { userModel } = require("../Models/userModel")
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
+const { authenticate } = require("../middlewares/authenticate")
 
 const userRouter = express.Router()
 
@@ -30,7 +31,7 @@ userRouter.post('/register', async (req, res) => {
                 } else {
                     const user = new userModel({ firstname, lastname, email, password: hash })
                     await user.save()
-                    res.send({ 'msg': 'new user has been registered' })
+                    res.send({ 'msg': 'new user has been registered',"result":"register" })
                 }
             }
         });

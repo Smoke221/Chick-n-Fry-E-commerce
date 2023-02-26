@@ -1,7 +1,21 @@
 let getData = JSON.parse(localStorage.getItem("in-cart")) || []
 let container = document.querySelector('#container')
+
+window.onload = calculateQty(getData)
+window.addEventListener("load",() => {
+    calculateTotal(getData)
+    document.getElementById("price").innerText = localStorage.getItem("sub-total")
+    document.getElementById("nav-qty").innerText = localStorage.getItem("total-quantity") || 0
+})
+
 document.querySelector("#username").textContent = "Welcome," + " " + localStorage.getItem("userName")
 
+document.querySelector("#order-btn").addEventListener("click", () => {
+    window.location.assign("breakfast.html")
+})
+document.getElementById("logo-name").addEventListener("click", () => {
+    window.location.href = "index.html"
+})
 function displayCard(data) {
     container.innerHTML = null;
 
@@ -67,6 +81,7 @@ function displayCard(data) {
             let cartProduct = getData.find(p => p.id === e.id);
             if (cartProduct) {
                 cartProduct.quantity = (selectedValue);
+                quantity.textContent = "Quantity: " + selectedValue;
             } else {
                 getData.push({ ...e, quantity: (selectedValue) });
             }
@@ -125,6 +140,7 @@ function calculateQty(data){
 }
 
 let paymentCard = document.querySelector("#payment")
+let method = document.querySelector("method")
 const payment = () => {
     if (paymentCard.style.display === "none") {
         paymentCard.style.display = "block";
@@ -138,10 +154,16 @@ const payment = () => {
 
 let qty =  calculateQty(getData)
 // document.getElementById("quantity").textContent = qty
+let messageCard = document.querySelector("#message-card");
 
 let payBtn = document.querySelector("#pay").addEventListener("click", () => {
-    localStorage.clear()
-    paymentCard.style.display === "none"
-    alert("Order Successful")
+    localStorage.removeItem("total-quantity");
+    localStorage.removeItem("sub-total");
+    localStorage.removeItem("in-cart")
+    paymentCard.style.display = "none"
+    messageCard.style.display = "block";
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 2000);
     
 })

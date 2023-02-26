@@ -5,8 +5,8 @@ const authenticate = (req,res,next) => {
     if(token){
         jwt.verify(token,'chick-n-fry',(err,decoded) => {
             if(decoded){
-                console.log(decoded.adminID);
-                req.body.admin = decoded.adminID
+                console.log(decoded.userID);
+                req.body.userID = decoded.userID
                 next()
             }else{
                 res.send({'msg':'please login'})

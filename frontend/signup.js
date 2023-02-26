@@ -17,6 +17,11 @@ const onSignUp=() => {
         body: JSON.stringify(payload)
     })
     .then(res => res.json())
-    .then(res => console.log(res))
+    .then(data => {
+        if(data.result){
+            // localStorage.setItem("result",res.result)
+            window.location.assign("login.html")
+        }
+    })
     .catch(err => console.log(err))
 }
