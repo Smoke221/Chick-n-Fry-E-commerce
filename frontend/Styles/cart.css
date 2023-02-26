@@ -237,3 +237,16 @@ ion-icon{
     /* display: none; */
     z-index: 9999;
 }
+
+/* no login */
+#noLogin{
+    margin-top: 5%;
+    text-align: center;
+}
+#noLogin>h1{
+    color: #004f71;
+}
+#noLogin>a{
+    text-decoration: none;
+    color: #de0a31;
+}

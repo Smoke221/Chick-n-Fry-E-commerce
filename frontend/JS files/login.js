@@ -25,7 +25,7 @@ form.addEventListener('click', function (event) {
                         // console.log(res.token);
                         localStorage.removeItem("userName");
                         // localStorage.removeItem("token");
-                        localStorage.setItem('userName',res.name)
+                        localStorage.setItem('userName', res.name)
                         localStorage.setItem('token', res.token);
                         window.location.href = "index.html";
                     } else {
@@ -38,3 +38,27 @@ form.addEventListener('click', function (event) {
     }
 });
 
+let main = document.getElementById("main")
+let userName = document.getElementById("name")
+let nologin = document.getElementById("noLogin")
+let userinfo = document.getElementById("user-info")
+
+window.onload = () => {
+    if (localStorage.getItem("userName") !== null) {
+        userinfo.style.display = "block"
+        main.style.display = "none"
+        userName.textContent = localStorage.getItem("userName")
+    } else {
+        userinfo.style.display = "none"
+    }
+};
+
+let messageCard = document.querySelector("#message-card");
+
+document.querySelector("#login-btn").addEventListener("click",() => {
+    localStorage.clear()
+    messageCard.style.display = "block"
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 2000);
+})

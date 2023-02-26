@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Chick-n-Fry</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="./Styles/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav id="nav">
-        <img src="logo.png" alt="">
+        <img src="./images/logo.png" alt="">
     </nav>
-    <div id="main">
+    <div style="display: block;" id="main">
         <h1>Sign in to <br> Chick-n-Fry®</h1>
         <p>Receive points for qualifying purchases, redeem rewards and reach new tiers with increasing benefits. <br> Access your order history to make quick reorders and edits to open orders.</p>
         <br>
@@ -23,6 +23,43 @@
             <input onclick="onLogin()" type="submit" value="Sign in to Chick-n-Fry">
         </form>
     </div>
+    <div style="display: none;"  id="user-info">
+        <h1>Welcome, <span  id="name"></span></h1>
+        <p>This is your Account</p>
+        <button id="login-btn">LOGOUT</button>
+    </div>
+    <div style="display: none;"  id="message-card">Logout Success</div>
+    <div id="btm-top">
+        <img width="105%" src="./images/One (2).png" alt="">
+    </div>
+    <div id="btm">
+        <div>
+            <p id="btm-texts">
+                <a href="">Nutrition & Allergens</a>
+                <a href="">Customer Support</a>
+                <a href="">Careers</a>
+                <a href="">Franchising</a>
+                <a href="">Merchandise</a>
+                <a href="">Press Room</a>
+            </p>
+            <p id="btm-text">
+                <a href="">Do business with us</a>
+                <a href="">Terms and Conditions of Use</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Cookie and Internet-Based Advertising Policy</a>
+            </p>
+            <p id="btm-text">
+                <a href="">Dont Not Sell Or Share My Personal Information</a>
+                <a href="">Cookie Preference center</a>
+                <a href="">Accessibility</a>
+                <a href="">Locations listing</a>
+                <a href="">Legal</a>
+            </p>
+            <p id="btm-text">
+                <a href="">2023 SK Properties, Inc. All rights reserved.</a>
+            </p>
+        </div>
+    </div>
 </body>
 </html>
-<script src="login.js"></script>
+<script src="./JS files/login.js"></script>

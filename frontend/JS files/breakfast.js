@@ -7,7 +7,7 @@ document.getElementById("nav-qty").innerText = localStorage.getItem("total-quant
 document.querySelector("#order-btn").addEventListener("click", () => {
     window.location.assign("breakfast.html")
 })
-document.querySelector("#username").textContent = "Welcome," + " " + localStorage.getItem("userName")
+document.querySelector("#username").textContent = "Welcome," + " " + (localStorage.getItem("userName") || "Stranger")
 
 let bag = []
 let container = document.querySelector("#container")
@@ -38,10 +38,16 @@ function displayCard(data){
         addToCart.textContent = "Add to Meal"
         // addToCart.setAttribute("onclick","toCart()")
         addToCart.addEventListener("click", () => {
+            
             addToCart.textContent = "In your meal"
             let added = JSON.parse(localStorage.getItem("in-cart")) || []
             added.push({...e,quantity:1})
             localStorage.setItem("in-cart",JSON.stringify(added))
+            let qtydata = localStorage.getItem("total-quantity")
+            qtydata++
+            localStorage.setItem("total-quantity",qtydata)
+            document.getElementById("nav-qty").innerText = localStorage.getItem("total-quantity")
+            
         })
 
         divs.append(image,name,calories,price,addToCart)
