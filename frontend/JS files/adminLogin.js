@@ -23,7 +23,7 @@ form.addEventListener('click', function (event) {
                         // document.querySelector("#admin_name").textContent = res.name
                         localStorage.setItem('name',res.name)
                         localStorage.setItem('token', res.token);
-                        window.location.href = "http://127.0.0.1:5500/tangible-voyage-4988/frontend/admin.html"
+                        window.location.href = "admin.html"
                     } else {
                         console.log("Error: Response does not include token");
                     }
