@@ -2,6 +2,11 @@ document.getElementById("nav").addEventListener("click", () => {
     window.location.href = "index.html"
 })
 
+document.getElementById("nav-qty").innerText = localStorage.getItem("total-quantity") || 0
+
+document.querySelector("#order-btn").addEventListener("click", () => {
+    window.location.assign("breakfast.html")
+})
 document.querySelector("#username").textContent = "Welcome," + " " + localStorage.getItem("userName")
 
 let bag = []
@@ -35,7 +40,7 @@ function displayCard(data){
         addToCart.addEventListener("click", () => {
             addToCart.textContent = "In your meal"
             let added = JSON.parse(localStorage.getItem("in-cart")) || []
-            added.push({...e})
+            added.push({...e,quantity:1})
             localStorage.setItem("in-cart",JSON.stringify(added))
         })
 

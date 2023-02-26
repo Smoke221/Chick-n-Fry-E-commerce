@@ -60,6 +60,18 @@ nav {
     width: 25%;
     margin-right: 5%;
 }
+#nav-qty{
+    position: fixed;
+    top: 9px;
+    right: 313px;
+    padding: 2px 5px 2px 5px;
+    border-radius: 50%;
+    color: white;
+    background-color: #de0a31;
+}
+ion-icon{
+    font-size: 25px;
+}
 /* menu part */
 .menu{
     display: flex;

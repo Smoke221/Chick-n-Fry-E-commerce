@@ -6,6 +6,8 @@ const cors = require("cors")
 require('dotenv').config()
 const {adminRouter} = require("./Routes/adminRoute")
 const {authenticate} = require("./middlewares/authenticate")
+const {breakfastRouter} = require("./Routes/breakfastRoute")
+const{cartRouter} = require("./Routes/cartRoute")
 
 
 const app = express()
@@ -22,9 +24,14 @@ app.get("/",(req,res) => {
     }
 })
 
+
 app.use("/user",userRouter)
 // app.use(authenticate)
 app.use("/admin",adminRouter)
+
+app.use("/breakfast",breakfastRouter)
+
+// app.use("/cart",cartRouter)
 
 
 app.listen(process.env.port,async() => {

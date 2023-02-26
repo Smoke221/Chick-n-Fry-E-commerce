@@ -24,7 +24,9 @@
             <a href="">Careers</a>
         </div>
         <div id="signup">
-            <a href="cart.html" id="username"><ion-icon name="fast-food-outline"></ion-icon> Cart</a>
+            <!-- <a href="">Account</a> -->
+            <a id="username" href="signup.html">Sign Up</a>
+            <a href="cart.html"><ion-icon name="fast-food-outline"></ion-icon><span id="nav-qty"></span></a>
             <button id="order-btn">Order food</button>
         </div>
     </nav> <br><br><br><br><br>
@@ -50,7 +52,7 @@
         </div>
     </div>
     <div id="payment" style="display: none;">
-        <div id="qty"><p>No.of items that will be delivered</p><p id="qunatity">0</p></div>
+        <div id="qty"><p>No.of items that will be delivered</p><p id="qunatity"></p></div>
         <div id="payable"><p>Amount Payable</p><p id="amt-payable"></p></div>
         <div id="method">
             <p><input type="radio"> Cash On Delivery</p>
@@ -61,6 +63,7 @@
         </div> <br>
         <button id="pay">Proceed</button>
     </div>
+    <div style="display: none;"  id="message-card">You meal will be delivered within 30mins. Bon Apetiet</div>
 </body>
 
 </html>

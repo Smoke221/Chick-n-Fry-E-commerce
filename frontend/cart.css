@@ -60,11 +60,18 @@ nav {
     width: 25%;
     margin-right: 5%;
 }
-ion-icon {
-    margin: auto;
-    font-size: 27px;
-    color: #db2b4b;
-  }
+#nav-qty{
+    position: fixed;
+    top: 9px;
+    right: 313px;
+    padding: 2px 5px 2px 5px;
+    border-radius: 50%;
+    color: white;
+    background-color: #de0a31;
+}
+ion-icon{
+    font-size: 25px;
+}
 
 #username{
     display: flex;
@@ -213,4 +220,20 @@ ion-icon {
     height: 4vh;
     font-size: medium;
     margin-left: 45%;
+}
+
+/* message-card */
+#message-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #de0a31;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    /* display: none; */
+    z-index: 9999;
 }

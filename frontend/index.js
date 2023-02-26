@@ -9,4 +9,11 @@
 //       document.querySelector('#username').textContent = data.firstname;
 //     })
 //     .catch(error => console.error(error));
-document.querySelector("#username").textContent = "Welcome," + " " + localStorage.getItem("userName")
+document.querySelector("#username").textContent = "Welcome," + " " + (localStorage.getItem("userName") || "Stranger")
+document.querySelector("#order-btn").addEventListener("click", () => {
+    window.location.assign("breakfast.html")
+})
+document.getElementById("logo-name").addEventListener("click", () => {
+    window.location.href = "index.html"
+})
+document.getElementById("nav-qty").innerText = localStorage.getItem("total-quantity") || 0

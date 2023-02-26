@@ -22,7 +22,9 @@ form.addEventListener('click', function (event) {
                 .then(res => res.json())
                 .then(res => {
                     if (res.token) {
-                        // console.log(res.name);
+                        // console.log(res.token);
+                        localStorage.removeItem("userName");
+                        // localStorage.removeItem("token");
                         localStorage.setItem('userName',res.name)
                         localStorage.setItem('token', res.token);
                         window.location.href = "index.html";
