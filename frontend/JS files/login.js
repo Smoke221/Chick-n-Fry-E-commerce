@@ -12,7 +12,7 @@ form.addEventListener('click', function (event) {
                 email: document.querySelector('#email').value,
                 password: document.querySelector('#password').value
             }
-            fetch("http://localhost:1010/user/login", {
+            fetch("https://shy-pear-springbok-yoke.cyclic.app/user/login", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"

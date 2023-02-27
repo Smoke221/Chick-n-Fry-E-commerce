@@ -36,7 +36,7 @@ xhr.onreadystatechange = function () {
         })
     }
 }
-xhr.open("GET", 'http://localhost:1010/admin/dashboard')
+xhr.open("GET", 'https://shy-pear-springbok-yoke.cyclic.app/admin/dashboard')
 xhr.setRequestHeader("Authorization", `${token}`);
 xhr.send()
 
@@ -121,7 +121,7 @@ const addProd = () => {
         fat: document.getElementById("fat").value,
         protein: document.getElementById("protein").value
     }
-    fetch("http://localhost:1010/admin/add", {
+    fetch("https://shy-pear-springbok-yoke.cyclic.app/admin/add", {
         method: "POST",
         headers: {
             "Content-type": "application/json",
@@ -141,7 +141,7 @@ const updateProd = () => {
         price: document.querySelector(".upPrice").value,
     }
     const inputID = document.querySelector(".upId").value
-    fetch(`http://localhost:1010/admin/update/${inputID}`, {
+    fetch(`https://shy-pear-springbok-yoke.cyclic.app/admin/update/${inputID}`, {
         method: "PATCH",
         headers: {
             "Content-type": "application/json",
@@ -166,7 +166,7 @@ const updateAllProd = () => {
         fat: document.getElementById("allFat").value,
         protein: document.getElementById("allProtein").value
     }
-    fetch(`http://localhost:1010/admin/update/${inputID}`, {
+    fetch(`https://shy-pear-springbok-yoke.cyclic.app/admin/update/${inputID}`, {
         method: "PATCH",
         headers: {
             "Content-type": "application/json",
@@ -184,7 +184,7 @@ const deleteProd = () => {
     const inputID = document.querySelector(".id")
 
     // console.log(inputID);
-    fetch(`http://localhost:1010/admin/delete/${inputID.value}`, {
+    fetch(`https://shy-pear-springbok-yoke.cyclic.app/admin/delete/${inputID.value}`, {
         method: "DELETE",
         headers: {
             "Authorization": `${token}`
