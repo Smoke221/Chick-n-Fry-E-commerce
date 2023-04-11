@@ -21,9 +21,9 @@ fetch("https://shy-pear-springbok-yoke.cyclic.app/user/breakfast", {
     .then((fromResolve) => fromResolve.json())
     .then((data) => {
         // bag = data
-        const Products = data.prods
+        bag = data.prods
         container.innerHTML = null;
-        Products.forEach(e => {
+        bag.forEach(e => {
             let divs = document.createElement("div")
 
             let image = document.createElement("img")
