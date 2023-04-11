@@ -14,7 +14,7 @@ userRouter.get("/", async (req, res) => {
 userRouter.get("/breakfast", async (req,res) => {
     try{
         const data = await AddModel.find()
-        res.send({"msg":"All the products","data":data})
+        res.send({"msg":"All the products","prods":data})
     }
     catch (err) {
         res.send({ 'error': err.message })
