@@ -9,7 +9,7 @@ const onSignUp=() => {
         email:document.getElementById('email').value,
         password:document.getElementById('password').value
     }
-    fetch("http://localhost:1010/user/register",{
+    fetch("https://shy-pear-springbok-yoke.cyclic.app/user/register",{
         method:"POST",
         headers:{
             "Content-type":"application/json"
