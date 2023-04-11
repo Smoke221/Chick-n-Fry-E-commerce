@@ -1,5 +1,6 @@
 const express = require("express")
 const { userModel } = require("../Models/userModel")
+const {AddModel} = require("../Models/ProductModel")
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
 const { authenticate } = require("../middlewares/authenticate")
@@ -8,6 +9,16 @@ const userRouter = express.Router()
 
 userRouter.get("/", async (req, res) => {
     res.send({ "msg": "Chick-n-Fry SignUp Page" })
+})
+
+userRouter.get("/breakfast", async (req,res) => {
+    try{
+        const data = await AddModel.find()
+        res.send({"msg":"All the products","data":data})
+    }
+    catch (err) {
+        res.send({ 'error': err.message })
+    }
 })
 
 // {
