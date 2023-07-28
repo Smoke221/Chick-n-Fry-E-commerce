@@ -1,0 +1,1 @@
+const productID = searchParams.get("id");

@@ -1,0 +1,103 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+/* nav bar  */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #de0a31;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    margin-top: -0.5%;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+}
+
+#logo-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#signup,
+#menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#signup>a,
+#menu>a {
+    text-decoration: none;
+    color: #de0a31;
+}
+
+#order-btn {
+    border: none;
+    background-color: #de0a31;
+    color: white;
+    height: 45px;
+    padding: 0.6rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#logo-name>img {
+    width: 13%;
+    cursor: pointer;
+    margin-bottom: 2%
+}
+
+#menu {
+    width: 25%;
+    margin-right: 5%;
+}
+
+#signup {
+    width: 25%;
+    margin-right: 5%;
+}
+
+#nav-qty{
+    position: fixed;
+    top: 9px;
+    right: 232px;
+    padding: 2px 5px 3px 5px;
+    border-radius: 50%;
+    color: white;
+    background-color: #de0a31;
+}
+ion-icon{
+    font-size: 25px;
+}
+
+div img{
+    width: 100%;
+}
+
+/* bottom part */
+#btm{
+    margin-top: 2%;
+}
+#btm-texts,
+#btm-text {
+    width: 45%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#btm-texts>a {
+    text-decoration: none;
+    color: #de0a31;
+}
+#btm-text{
+    margin-top: 0.5%;
+}
+#btm-text>a {
+    text-decoration: none;
+    color: gray;
+    font-size: 12px;
+}

@@ -25,11 +25,22 @@ fetch("https://shy-pear-springbok-yoke.cyclic.app/user/breakfast", {
         container.innerHTML = null;
         bag.forEach(e => {
             let divs = document.createElement("div")
+            divs.setAttribute("class", "card")
+            divs.setAttribute("data-product-id", e._id)
+
+            divs.addEventListener("click",(e) => {
+                if(e.target.classList.contains('title') || e.target.classList.contains('image')){
+                    const productID = e.target.closest(".card").getAttribute("data-product-id");
+                    fetchProduct(productID)
+                }
+            })
 
             let image = document.createElement("img")
+            image.setAttribute("class","image")
             image.setAttribute("src", e.main_image)
 
             let name = document.createElement("h2")
+            name.setAttribute("class","title")
             name.textContent = e.title
             let calories = document.createElement("p")
             calories.textContent = e.calories + " " + "per meal"
@@ -57,3 +68,7 @@ fetch("https://shy-pear-springbok-yoke.cyclic.app/user/breakfast", {
         })
     })
 
+function fetchProduct(productID){
+    const productURL = `product.html?id=${productID}`
+    window.open(productURL, "_blank");
+}
