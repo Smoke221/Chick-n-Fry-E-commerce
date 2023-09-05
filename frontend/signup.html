@@ -1,71 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up | Chick-n-Fry</title>
-    <link rel="stylesheet" href="./Styles/signup.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="./Styles/signup.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <nav id="nav">
-        <img src="./images/logo.png" alt="">
+      <img src="./images/logo.png" alt="" />
     </nav>
     <div id="main">
-        <h1>Create a Chick-n-Fry® account</h1>
-        <p>Receive points for qualifying purchases, redeem rewards and reach new tiers with increasing benefits. <br> Access
-         your order history to make quick reorders and edits to open orders.</p>
-        <form>
-            <input type="text" id="firstname" name="firstname" placeholder=" Enter your first name" required><br>
+      <h1>Create a Chick-n-Fry® account</h1>
+      <p>
+        Receive points for qualifying purchases, redeem rewards and reach new
+        tiers with increasing benefits. <br />
+        Access your order history to make quick reorders and edits to open
+        orders.
+      </p>
+      <form id="form">
+        <input
+          type="text"
+          id="firstname"
+          name="firstname"
+          placeholder=" Enter your first name"
+          required
+        /><br />
 
-            <input type="text" id="lastname" name="lastname" placeholder=" Enter your last name" required><br>
+        <input
+          type="text"
+          id="lastname"
+          name="lastname"
+          placeholder=" Enter your last name"
+          required
+        /><br />
 
-            <input type="email" autocomplete="username" id="email" name="email" placeholder=" Enter your email" required><br>
+        <input
+          type="email"
+          autocomplete="username"
+          id="email"
+          name="email"
+          placeholder=" Enter your email"
+          required
+        /><br />
 
-            <input type="email" autocomplete="username" id="confirm_email" name="confirm_email" placeholder=" Confirm your email" required><br>
+        <input
+          type="email"
+          autocomplete="username"
+          id="confirm_email"
+          name="confirm_email"
+          placeholder=" Confirm your email"
+          required
+        /><br />
 
-            <input type="password" autocomplete="current-password" id="password" name="password" placeholder=" Enter your password" required><br><br>
+        <input
+          type="password"
+          autocomplete="current-password"
+          id="password"
+          name="password"
+          placeholder=" Enter your password"
+          required
+        /><br /><br />
 
-            <input onclick="onSignUp()" type="submit" value="Create account">
-        </form>
-        <br>
-        <p>Already have a account? <a href="login.html">Login</a></p>
+        <input onclick="onSignUp()" type="submit" value="Create account" />
+      </form>
+      <br />
+      <p>Already have a account? <a href="login.html">Login</a></p>
+    </div>
+    <div id="message-card" style="display: none" class="message-card">
+      <p id="message-text"></p>
     </div>
     <div id="btm-top">
-        <img width="105%" src="./images/One (2).png" alt="">
+      <img width="105%" src="./images/One (2).png" alt="" />
     </div>
     <div id="btm">
-        <div>
-            <p id="btm-texts">
-                <a href="">Nutrition & Allergens</a>
-                <a href="">Customer Support</a>
-                <a href="">Careers</a>
-                <a href="">Franchising</a>
-                <a href="">Merchandise</a>
-                <a href="">Press Room</a>
-            </p>
-            <p id="btm-text">
-                <a href="">Do business with us</a>
-                <a href="">Terms and Conditions of Use</a>
-                <a href="">Privacy Policy</a>
-                <a href="">Cookie and Internet-Based Advertising Policy</a>
-            </p>
-            <p id="btm-text">
-                <a href="">Dont Not Sell Or Share My Personal Information</a>
-                <a href="">Cookie Preference center</a>
-                <a href="">Accessibility</a>
-                <a href="">Locations listing</a>
-                <a href="">Legal</a>
-            </p>
-            <p id="btm-text">
-                <a href="">2023 SK Properties, Inc. All rights reserved.</a>
-            </p>
-        </div>
+      <div>
+        <p id="btm-texts">
+          <a href="">Nutrition & Allergens</a>
+          <a href="">Customer Support</a>
+          <a href="">Careers</a>
+          <a href="">Franchising</a>
+          <a href="">Merchandise</a>
+          <a href="">Press Room</a>
+        </p>
+        <p id="btm-text">
+          <a href="">Do business with us</a>
+          <a href="">Terms and Conditions of Use</a>
+          <a href="">Privacy Policy</a>
+          <a href="">Cookie and Internet-Based Advertising Policy</a>
+        </p>
+        <p id="btm-text">
+          <a href="">Dont Not Sell Or Share My Personal Information</a>
+          <a href="">Cookie Preference center</a>
+          <a href="">Accessibility</a>
+          <a href="">Locations listing</a>
+          <a href="">Legal</a>
+        </p>
+        <p id="btm-text">
+          <a href="">2023 SK Properties, Inc. All rights reserved.</a>
+        </p>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
 <script src="./JS files/signup.js"></script>

@@ -82,7 +82,7 @@ a {
     color: gray;
 }
 
-#login-btn {
+#logout-btn {
     border: none;
     background-color: #de0a31;
     color: white;
@@ -92,20 +92,39 @@ a {
     cursor: pointer;
 }
 
-/* message-card */
-#message-card {
+/* Style for the message card */
+.message-card {
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    background-color: #2ecc71;
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
     text-align: center;
-    /* display: none; */
-    z-index: 9999;
+    border-radius: 5px;
+    z-index: 1000;
+    max-width: 300px;
+}
+
+/* Style for the message text inside the card */
+#message-text {
+    font-size: 18px;
+    color: #333333;
+}
+
+/* Close button (optional) */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #777777;
+}
+.close-button:hover {
+    color: #ff0000; /* Change the color on hover */
 }
 
 /* btm */
