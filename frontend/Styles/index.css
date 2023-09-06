@@ -269,3 +269,6 @@ ion-icon{
     color: gray;
     font-size: 12px;
 }
+#btm-top>img{
+    width: 100%;
+}

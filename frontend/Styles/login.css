@@ -132,7 +132,9 @@ a {
 #btm-top{
     margin-top: 5%;
 }
-
+#btm-top>img{
+    width: 100%;
+}
 #btm{
     margin-top: 2%;
 }
