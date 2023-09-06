@@ -40,7 +40,7 @@ xhr.onreadystatechange = function () {
     });
   }
 };
-xhr.open("GET", "https://shy-pear-springbok-yoke.cyclic.app/admin/dashboard");
+xhr.open("GET", "https://uptight-pumps-toad.cyclic.app/admin/dashboard");
 xhr.setRequestHeader("Authorization", `${token}`);
 xhr.send();
 
@@ -122,7 +122,7 @@ const addProd = () => {
     fat: document.getElementById("fat").value,
     protein: document.getElementById("protein").value,
   };
-  fetch("https://shy-pear-springbok-yoke.cyclic.app/admin/add", {
+  fetch("https://uptight-pumps-toad.cyclic.app/admin/add", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -142,14 +142,18 @@ const updateProd = () => {
     price: document.querySelector(".upPrice").value,
   };
   const inputID = document.querySelector(".upId").value;
-  fetch(`https://shy-pear-springbok-yoke.cyclic.app/admin/update/${inputID}`, {
-    method: "PATCH",
-    headers: {
-      "Content-type": "application/json",
-      Authorization: `${token}`,
-    },
-    body: JSON.stringify(payload),
-  })
+  fetch(
+    `
+https://uptight-pumps-toad.cyclic.app/admin/update/${inputID}`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${token}`,
+      },
+      body: JSON.stringify(payload),
+    }
+  )
     .then((res) => res.json())
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
@@ -166,14 +170,18 @@ const updateAllProd = () => {
     fat: document.getElementById("allFat").value,
     protein: document.getElementById("allProtein").value,
   };
-  fetch(`https://shy-pear-springbok-yoke.cyclic.app/admin/update/${inputID}`, {
-    method: "PATCH",
-    headers: {
-      "Content-type": "application/json",
-      Authorization: `${token}`,
-    },
-    body: JSON.stringify(payload),
-  })
+  fetch(
+    `
+https://uptight-pumps-toad.cyclic.app/admin/update/${inputID}`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${token}`,
+      },
+      body: JSON.stringify(payload),
+    }
+  )
     .then((res) => res.json())
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
@@ -185,7 +193,8 @@ const deleteProd = () => {
 
   // console.log(inputID);
   fetch(
-    `https://shy-pear-springbok-yoke.cyclic.app/admin/delete/${inputID.value}`,
+    `
+https://uptight-pumps-toad.cyclic.app/admin/delete/${inputID.value}`,
     {
       method: "DELETE",
       headers: {

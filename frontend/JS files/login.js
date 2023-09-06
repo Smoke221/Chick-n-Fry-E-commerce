@@ -41,7 +41,7 @@ const onLogin = () => {
     password,
   };
 
-  fetch("https://shy-pear-springbok-yoke.cyclic.app/user/login", {
+  fetch("https://uptight-pumps-toad.cyclic.app/user/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

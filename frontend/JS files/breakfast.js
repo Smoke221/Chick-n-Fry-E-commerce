@@ -12,7 +12,7 @@ document.querySelector("#username").textContent = "Welcome," + " " + (localStora
 let bag = []
 let container = document.querySelector("#container")
 
-fetch("https://shy-pear-springbok-yoke.cyclic.app/user/breakfast", {
+fetch("https://uptight-pumps-toad.cyclic.app/user/breakfast", {
     method: "GET",
     headers: {
         "Content-type": "application/json"

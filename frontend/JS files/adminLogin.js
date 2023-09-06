@@ -29,7 +29,7 @@ form.addEventListener("click", function (event) {
         email: document.querySelector("#email").value,
         password: document.querySelector("#password").value,
       };
-      fetch("https://shy-pear-springbok-yoke.cyclic.app/admin/login", {
+      fetch("https://uptight-pumps-toad.cyclic.app/admin/login", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
