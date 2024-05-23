@@ -27,7 +27,7 @@ const onSignUp = () => {
     email: document.getElementById("email").value,
     password: document.getElementById("password").value,
   };
-  fetch("https://uptight-pumps-toad.cyclic.app/user/register", {
+  fetch("https://chick-n-fry-e-commerce.onrender.com/user/register", {
     method: "POST",
     headers: {
       "Content-type": "application/json",

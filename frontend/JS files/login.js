@@ -41,7 +41,7 @@ const onLogin = () => {
     password,
   };
 
-  fetch("https://uptight-pumps-toad.cyclic.app/user/login", {
+  fetch("https://chick-n-fry-e-commerce.onrender.com/user/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

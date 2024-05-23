@@ -40,7 +40,7 @@ xhr.onreadystatechange = function () {
     });
   }
 };
-xhr.open("GET", "https://uptight-pumps-toad.cyclic.app/admin/dashboard");
+xhr.open("GET", "https://chick-n-fry-e-commerce.onrender.com/admin/dashboard");
 xhr.setRequestHeader("Authorization", `${token}`);
 xhr.send();
 
@@ -122,7 +122,7 @@ const addProd = () => {
     fat: document.getElementById("fat").value,
     protein: document.getElementById("protein").value,
   };
-  fetch("https://uptight-pumps-toad.cyclic.app/admin/add", {
+  fetch("https://chick-n-fry-e-commerce.onrender.com/admin/add", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -144,7 +144,7 @@ const updateProd = () => {
   const inputID = document.querySelector(".upId").value;
   fetch(
     `
-https://uptight-pumps-toad.cyclic.app/admin/update/${inputID}`,
+https://chick-n-fry-e-commerce.onrender.com/admin/update/${inputID}`,
     {
       method: "PATCH",
       headers: {
@@ -172,7 +172,7 @@ const updateAllProd = () => {
   };
   fetch(
     `
-https://uptight-pumps-toad.cyclic.app/admin/update/${inputID}`,
+https://chick-n-fry-e-commerce.onrender.com/admin/update/${inputID}`,
     {
       method: "PATCH",
       headers: {
@@ -194,7 +194,7 @@ const deleteProd = () => {
   // console.log(inputID);
   fetch(
     `
-https://uptight-pumps-toad.cyclic.app/admin/delete/${inputID.value}`,
+https://chick-n-fry-e-commerce.onrender.com/admin/delete/${inputID.value}`,
     {
       method: "DELETE",
       headers: {
